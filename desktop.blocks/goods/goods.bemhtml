@@ -1,0 +1,65 @@
+block goods {
+
+    tag: 'ul'
+
+    content: {
+        var content = [];
+
+        this.ctx.goods.forEach(function(item){
+
+            var mods = {};
+
+            if (item.new) mods.new = 'yes';
+
+            content.push({
+                elem: 'item',
+                mods: mods,
+                content: [
+                    {
+                        elem: 'title',
+                        content: item.title
+                    },
+                    {
+                        elem: 'image',
+                        url: item.image
+                    },
+                    {
+                        elem: 'price',
+                        content: {
+                            block: 'b-link',
+                            mix: [{ block: 'goods', elem: 'link' }],
+                            url: item.url,
+                            content: item.price
+                        }
+                    }
+                ]
+            });
+
+            content.push(' ');
+
+        });
+
+        for(var i = 0; i < 10; i++) content.push({ elem: 'sizer' });
+
+        return content;
+    }
+
+    elem item, tag: 'li'
+
+    elem sizer, tag: 'li'
+
+    elem title, tag: 'h3'
+
+    elem image {
+
+        tag: 'img'
+
+        attrs: {
+            src: this.ctx.url
+        }
+
+    }
+
+    elem price, tag: 'span'
+
+}
