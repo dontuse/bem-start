@@ -10,14 +10,23 @@ MAKE.decl('Arch', {
     blocksLevelsRegexp: /^.+?\.blocks/,
     bundlesLevelsRegexp: /^.+?\.bundles$/,
 
-    getLibraries: function() {
+    getLibraries: function () {
 
         return {
             'bem-bl': {
                 type: 'git',
                 url: 'git://github.com/bem/bem-bl.git',
                 treeish: '0.3'
+            },
+            'bemhtml': {
+                type: 'git',
+                url: 'git://github.com/bem/bemhtml.git'
+            },
+            'john-lib': {
+                type: 'git',
+                url: 'git://github.com/john-johnson/j.git'
             }
+
         };
 
     }
@@ -27,9 +36,9 @@ MAKE.decl('Arch', {
 
 MAKE.decl('BundleNode', {
 
-    getTechs: function() {
+    getTechs: function () {
 
-        if (PATH.basename(this.level.dir) === 'benchmark.bundles')  {
+        if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
             return [
                 'bemjson.js',
                 'bemdecl.js',
@@ -55,13 +64,13 @@ MAKE.decl('BundleNode', {
 
     },
 
-    getLevels: function(tech) {
+    getLevels: function (tech) {
 
         if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
             return ['../bem-bl/blocks-common',
-                    '../bem-bl/blocks-desktop',
-                    '../common.blocks',
-                    '../desktop.blocks']
+                '../bem-bl/blocks-desktop',
+                '../common.blocks',
+                '../desktop.blocks']
                 .map(PATH.resolve.bind(PATH, __dirname));
         }
 

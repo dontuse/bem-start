@@ -5,50 +5,57 @@
         { elem: 'css', url: '_index.css', ie: false},
         { elem: 'css', url: '_index.ie.css', ie: true },
         { block: 'i-jquery', elem: 'core'},
-        { elem: 'js', url: '_index.js'},
+        { elem: 'js', url:'_index.js'},
     ],
     content: [
         {
             block: 'head',
-            content: {
-                block: 'layout',
-                content: [
-                    {
-                        elem: 'left',
-                        content: {
-                            block: 'b-search',
-                            attrs: { action: '/search.xml' },
-                            input: {
-                                elem: 'input',
-                                attrs: { placeholder: 'Find' }
-                            },
-                            button: {
-                                elem: 'button'
-                            }
-                        }
-                    },
-                    {
-                        elem: 'right',
-                        content: {
-                            block: 'b-logo',
+            mix: [ { block: 'box', js: true } ],
+            content: [
+                {
+                    block: 'layout',
+                    content: [
+                        {
+                            elem: 'left',
                             content: {
-                                elem: 'link',
-                                url: 'http://bem.info',
-                                content: [
-                                    {
-                                        elem: 'icon',
-                                        url: '../../desktop.blocks/b-logo/b-logo.png'
-                                    },
-                                    {
-                                        elem: 'slogan',
-                                        content: 'A new way of thinking'
-                                    }
-                                ]
+                                block: 'b-search',
+                                attrs: { action: '/search.xml' },
+                                input: {
+                                    elem: 'input',
+                                    attrs: { placeholder: 'Find' }
+                                },
+                                button: {
+                                    elem: 'button'
+                                }
+                            }
+                        },
+                        {
+                            elem: 'right',
+                            content: {
+                                block: 'b-logo',
+                                content: {
+                                    elem: 'link',
+                                    url: 'http://bem.info',
+                                    content: [
+                                        {
+                                            elem: 'icon',
+                                            url: '../../desktop.blocks/b-logo/b-logo.png'
+                                        },
+                                        {
+                                            elem: 'slogan',
+                                            content: 'A new way of thinking'
+                                        }
+                                    ]
+                                }
                             }
                         }
-                    }
-                ]
-            }
+                    ]
+                },
+                {
+                    block: 'box',
+                    elem: 'switcher'
+                }
+            ]
         },
         {
             block: 'goods',
