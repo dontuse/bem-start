@@ -37,7 +37,7 @@ block goods {
             });
 
             content.push(' ');
-
+            return content;
         });
 
         for(var i = 0; i < 10; i++) content.push({ elem: 'sizer' });
