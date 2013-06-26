@@ -79,3 +79,52 @@ MAKE.decl('BundleNode', {
     }
 
 });
+
+// that bad
+
+MAKE.decl('BundleNode', {
+
+    getTechs: function () {
+
+        if (PATH.basename(this.level.dir) === 'test.pages') {
+            return [
+                'bemjson.js',
+                'bemdecl.js',
+                'deps.js',
+                'bemhtml'
+            ];
+        }
+
+        return [
+            'bemjson.js',
+            'bemdecl.js',
+            'deps.js',
+            'bemhtml',
+            'js',
+            'css',
+            'ie.css',
+            'ie6.css',
+            'ie7.css',
+            'ie8.css',
+            'ie9.css',
+            'html'
+        ];
+
+    },
+
+    getLevels: function (tech) {
+
+        if (PATH.basename(this.level.dir) === 'test.pages') {
+            return ['../bem-bl/blocks-common',
+                '../bem-bl/blocks-desktop',
+                '../common.blocks',
+                '../desktop.blocks']
+                .map(PATH.resolve.bind(PATH, __dirname));
+        }
+
+        return this.__base(tech);
+
+    }
+
+});
+
