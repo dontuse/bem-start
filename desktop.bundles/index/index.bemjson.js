@@ -92,6 +92,60 @@
                     url: '/'
                 }
             ]
+        },
+        {
+            block: 'b-exp',
+            products:[
+                {
+                    name : 'Штукатурка гипсовая Старт 25 кг',
+                    imgUrl : 'http://img.superstroy.ru/5ca5e7cdd57d818f0b31c60bcf2f9c3d/2011/08/219911_2.jpg',
+                    price : 91321,
+                    url : '/',
+                },
+                {
+                    name : 'Штукатурка гипсовая Старт 20 кг',
+                    price : 3231,
+                    url : '/',
+                },
+                {
+                    name : 'Штукатурка гипсовая Старт 200 кг',
+                    price : 2321,
+                    url : '/',
+                }
+            ]
+        },
+        {
+            block: 'b-exp',
+            products:[
+                {
+                    name : 'Штукатурка гипсовая Старт 25 кг',
+                    imgUrl : 'http://img.superstroy.ru/5ca5e7cdd57d818f0b31c60bcf2f9c3d/2011/08/219911_2.jpg',
+                    price : 91321,
+                    url : '/',
+                },
+                {
+                    name : 'Штукатурка гипсовая Старт 20 кг',
+                    price : 3231,
+                    url : '/',
+                },
+                {
+                    name : 'Штукатурка гипсовая Старт 200 кг',
+                    price : 2321,
+                    url : '/',
+                }
+            ]
+        },
+        {
+            block: 'b-footer',
+            content: [
+                {
+                    block: 'bad-block',
+                    tag: 'section',
+                    attrs: {'data-id':'123' , style:'background: black; height: 300px'},
+                    cls: 'vata-popup',
+                    content : '<h2 style="color:#ffffff; font-size: 50px;">Блок злодей</h2>'
+                }
+            ]
         }
     ]
 })
