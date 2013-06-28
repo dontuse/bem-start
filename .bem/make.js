@@ -36,16 +36,16 @@ MAKE.decl('Arch', {
 
 MAKE.decl('BundleNode', {
 
-    getTechs: function () {
+    getTechs: function () {    // возвр список технологий
 
-        if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
-            return [
-                'bemjson.js',
-                'bemdecl.js',
-                'deps.js',
-                'bemhtml'
-            ];
-        }
+//        if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
+//            return [
+//                'bemjson.js',
+//                'bemdecl.js',
+//                'deps.js',
+//                'bemhtml'
+//            ];
+//        }
 
         return [
             'bemjson.js',
@@ -64,18 +64,30 @@ MAKE.decl('BundleNode', {
 
     },
 
-    getLevels: function (tech) {
+//    getLevels: function (tech) {
+//
+//        if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
+//            return ['../bem-bl/blocks-common',
+//                '../bem-bl/blocks-desktop',
+//                '../common.blocks',
+//                '../desktop.blocks']
+//                .map(PATH.resolve.bind(PATH, __dirname));
+//        }
+//
+//        return this.__base(tech);
+//
+//    }
 
-        if (PATH.basename(this.level.dir) === 'benchmark.bundles') {
-            return ['../bem-bl/blocks-common',
-                '../bem-bl/blocks-desktop',
-                '../common.blocks',
-                '../desktop.blocks']
-                .map(PATH.resolve.bind(PATH, __dirname));
-        }
+});
 
-        return this.__base(tech);
 
+MAKE.decl('BundlesLevelNode', {
+    buildMergedBundle: function() {
+        if (this.getLevelPath() === 'desktop.bundles') return true;
+
+        return false;
+    },
+    mergedBundleName: function() {
+        return 'common';
     }
-
 });
