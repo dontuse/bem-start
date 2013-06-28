@@ -1,0 +1,25 @@
+.b-exp
+{
+    background: #fe362d;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.b-exp__item {
+    float: left;
+    width: 240px;
+    background: #ffffff;
+    margin-right: 20px;
+}
+
+.b-exp_type_2
+{
+    background: green;
+}
+
+
+
+
+
+
+

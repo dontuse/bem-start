@@ -60,6 +60,7 @@
         },
         {
             block: 'goods',
+
             goods: [1, 2, 3].map(function(){
                 return {
                     title: 'Apple iPhone 4S 32Gb',

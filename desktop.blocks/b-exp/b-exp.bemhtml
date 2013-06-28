@@ -1,0 +1,56 @@
+block b-exp {
+
+    tag : 'div'
+
+    content: {
+
+        var content = [];
+
+        this.ctx.products.forEach(function(item){
+
+
+            content.push({
+                elem: 'item',
+                content: [
+                    {
+                        elem: 'title',
+                        content: item.name
+                    },
+                    {
+                        elem: 'img',
+                        url: item.imgUrl
+                    },
+                    {
+                        elem: 'price',
+                        content: {
+                            content: item.price
+                        }
+                    }
+                ]
+            });
+
+            content.push(' ');
+
+
+        });
+
+        return content;
+    }
+
+    elem item, tag: 'div'
+
+    elem title, tag: 'div'
+
+    elem price, tag: 'div'
+
+    elem img {
+
+        tag: 'img'
+
+        attrs: {
+            src: this.ctx.url
+        }
+
+    }
+
+}
